@@ -2,5 +2,5 @@
 
 pip install urltools
 pip install selenium
-apt-get iceweasel
+apt-get install iceweasel
 
