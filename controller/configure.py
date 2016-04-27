@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # how to run:
-# configure.py --prefix ROUTER --add-monitor M1 --clean --database database.db
-# configure.py --prefix ROUTER --add-url http://localhost:8080/leds.html --with-name LED -d database.db
+# configure.py --prefix ROUTER --add-monitor M1 --clean
+# configure.py --prefix ROUTER --add-url http://localhost:8080/leds.html --with-name LED
 
 import sys
 import os
@@ -35,10 +35,15 @@ def write_to_list(name, outfile, clean):
 
 if __name__ == "__main__":
 	
+	monitor_db = "routerApp/Db/monitors.db"
+	monitor_list = "iocBoot/iocrouter/monitors.list"
+
+	url_db = "routerApp/Db/urls.db"
+	url_list = "iocBoot/iocrouter/pages.list"
+
 	# parse command line arguments
 	parser = optparse.OptionParser()
-	parser.add_option("-l", "--list", dest="list", help="list file", type="string")
-	parser.add_option("-d", "--database", dest="database", help="database file", type="string")
+
 	parser.add_option("-p", "--prefix", dest="prefix", help="PV prefix", type="string")
 	parser.add_option("-c", "--clean", action="store_true", dest="clean", help="clean database of existing entries")
 	parser.add_option("-m", "--add-monitor", dest="monitor", help="add specified monitor to database", type="string")
@@ -47,12 +52,18 @@ if __name__ == "__main__":
 
 	(args, remainder) = parser.parse_args()
 
-	if not args.list: parser.error("output list database file not specified")
-	if not args.database: parser.error("output database file not specified")
 	if not args.prefix: parser.error("Controller prefix name not given")
 	if args.url and not args.name: parser.error("Name of URL not given")
 	if not args.url and args.name: parser.error("Name for URL given, but not URL given")
 	if args.url and args.monitor: parser.error("Cannot parse both URL and monitor at the same time")
+
+	if args.url:
+		database_file = url_db
+		list_file = url_list
+	
+	if args.monitor:
+		database_file = monitor_db
+		list_file = monitor_list
 
 	# check/find EPICS base directory
 	EPICS_BASE_DIR = os.environ.get("EPICS_BASE")

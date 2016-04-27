@@ -12,7 +12,7 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += lists.db
 DB += urls.db
-DB += monitor.db
+DB += monitors.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
