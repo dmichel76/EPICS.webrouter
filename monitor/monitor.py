@@ -23,7 +23,7 @@ if not args.name: parser.error("Name of monitor not given")
 if not args.prefix: parser.error("Controller prefix name not given")
 
 # start and setup browser
-browser = Browser()
+browser = Browser("fierefox")
 if (args.fullscreen): browser.fullscreen()
 browser.set_default(DEFAULT_URL)
 old_target_url = browser.current_url()
