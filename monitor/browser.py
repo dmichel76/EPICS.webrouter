@@ -8,10 +8,15 @@ class Browser(object):
 	""" Class that controls the browser
 	"""
 
-	def __init__(self):
-		options = webdriver.ChromeOptions()
-		options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
-		self.browser = webdriver.Chrome(chrome_options=options)
+	def __init__(self, browser_name):
+
+		if browser_name.trim().lower() == "chrome":
+			options = webdriver.ChromeOptions()
+			options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
+			self.browser = webdriver.Chrome(chrome_options=options)
+
+		if browser_name.trim().lower() == "firefox":
+			self.browser = webdriver.Firefox()
 
 	def fullscreen(self):
 		body = self.browser.find_element_by_tag_name('body')
@@ -31,4 +36,3 @@ class Browser(object):
 
 	def get_default(self):
 		return self.default
-
