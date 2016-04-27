@@ -1,0 +1,30 @@
+
+record(stringin, "ROUTER:MONITOR_1:CURRENT_PAGE")
+{
+    field(DESC, "page to be displayed on web browser")
+    field(PINI, "YES")
+    field(VAL,  "")
+}
+
+record(bi, "ROUTER:MONITOR_1:RELOAD")
+{
+    field(DESC, "reload the browser")
+    field(ONAM, "DO RELOAD")
+    field(PINI, "YES")
+    field(ZNAM, "DO NOT RELOAD")
+}
+
+record(stringin, "ROUTER:MONITOR_2:CURRENT_PAGE")
+{
+    field(DESC, "page to be displayed on web browser")
+    field(PINI, "YES")
+    field(VAL,  "")
+}
+
+record(bi, "ROUTER:MONITOR_2:RELOAD")
+{
+    field(DESC, "reload the browser")
+    field(ONAM, "DO RELOAD")
+    field(PINI, "YES")
+    field(ZNAM, "DO NOT RELOAD")
+}

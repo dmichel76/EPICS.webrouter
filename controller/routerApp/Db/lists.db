@@ -1,0 +1,13 @@
+record(waveform, "$(p):PAGES")
+{
+	field(DESC, "list of pages available")
+	field(NELM, "100")
+	field(FTVL, "STRING")
+}
+
+record(waveform, "$(p):MONITORS")
+{
+	field(DESC, "list of monitors available")
+	field(NELM, "100")
+	field(FTVL, "STRING")
+}

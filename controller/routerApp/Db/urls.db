@@ -1,0 +1,14 @@
+
+record(stringin, "ROUTER:URL:LED")
+{
+    field(DESC, "URL for page called LED")
+    field(PINI, "YES")
+    field(VAL,  "http://localhost:8080/leds.html")
+}
+
+record(stringin, "ROUTER:URL:BUTTONS")
+{
+    field(DESC, "URL for page called BUTTONS")
+    field(PINI, "YES")
+    field(VAL,  "http://localhost:8080/buttons.html")
+}
