@@ -20,7 +20,9 @@ configure.py --prefix ROUTER --add-url http://localhost:8080/vacuum_sys.html --w
 ### Running the controller IOC
 
 ```
-cd controller/iocBoot/iocrouter/
+cd controller
+make
+cd iocBoot/iocrouter/
 ./st.cmd
 ```
 
