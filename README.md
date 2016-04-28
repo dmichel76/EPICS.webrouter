@@ -1,6 +1,8 @@
 # EPICS.webrouter
 A web page "router" driven by EPICS PVs. An EPICS IOC acts a "controller" used to control the URL that a browser points to. This can be used to remotely control the webpage shown by a browser on multiple headless display monitors.
 
+[![Concept](https://j.gifs.com/OYkZxE.gif)](https://youtu.be/_kaWKhoSxJg)
+
 ### Configuring the controller IOC
 
 ##### Adding new monitors
