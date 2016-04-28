@@ -3,14 +3,14 @@ A web page "router" driven by EPICS PVs. An EPICS IOC acts a "controller" used t
 
 ### Configuring the controller IOC
 
-#### Adding new monitors
+##### Adding new monitors
 ```
 cd controller
 configure.py --prefix ROUTER --add-monitor M1
 configure.py --prefix ROUTER --add-monitor M2
 ```
 
-#### Adding new URLs
+##### Adding new URLs
 ```
 cd controller
 configure.py --prefix ROUTER --add-url http://localhost:8080/beam_status.html --with-name STATUS
